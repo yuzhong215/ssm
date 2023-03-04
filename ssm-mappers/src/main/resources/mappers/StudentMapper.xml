@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mappers.StudentMapper">
+
+    <resultMap id="student" type="pojo.Student">
+        <id property="sid" column="sid"></id>
+        <result property="sName" column="sname"></result>
+        <result property="sAge" column="sage"></result>
+        <result property="sSex" column="ssex"></result>
+        <result property="sBirthday" column="sbirthday"></result>
+    </resultMap>
+
+    <select id="selectAll" resultMap="student">
+        select stu.sid,stu.sname,stu.sage,stu.ssex,stu.sbirthday from student stu;
+    </select>
+
+</mapper>
